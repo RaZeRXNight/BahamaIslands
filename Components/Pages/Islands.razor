@@ -1,0 +1,36 @@
+@page "/islands"
+@using islandClass
+
+<PageTitle>Islands</PageTitle>
+
+<h1>Islands</h1>
+    <section>
+        <h2 class="text-center">Featured Locations</h2>
+        
+        <div class="row">
+        @foreach (var island in featuredIslands)
+        {
+            <div class="col-4">
+                <div class="card h-100">
+                    <img src="@island.Image" style="width: auto; height: 16em" class=" card-top" alt="@island.Name">
+                    <div class="card-body">
+                        <h4>@island.Name</h4>
+                        <p>@island.Description</p>
+                    </div>
+                </div>
+            </div>
+        }
+        </div>
+    </section>
+
+@code
+{
+    private List<Island> featuredIslands = [
+        new ( "Ragged Island", "Home of Nassau"),
+        new ( "Andros", "Home of Nassau"),
+        new ( "Cat Island", "Home of Nassau"),
+        new ( "Acklins", "Home of Nassau"),
+        new ( "Mayaguana", "Home of Nassau"),
+        new ( "Bimini", "Home of Nassau"),
+    ];
+}

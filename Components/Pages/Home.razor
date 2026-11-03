@@ -1,0 +1,64 @@
+﻿@page "/"
+@using islandClass
+@rendermode InteractiveServer
+
+<PageTitle>Discover The Bahamas</PageTitle>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to The Bahamas</h1>
+        <p>Discover beautiful beaches, amazing islands, and rich culture.</p>
+        
+        <a class="btn btn-warning" href="/islands">Explore our Islands</a>
+    </div>
+</section>
+
+    <section>
+        <h2 class="text-center">Featured Locations</h2>
+        
+        <div class="row">
+        @foreach (var island in featuredIslands)
+        {
+            <div class="col-4">
+                <div class="card h-100">
+                    <img src="@island.Image" style="width: auto; height: 16em" class=" card-top" alt="@island.Name">
+                    <div class="card-body">
+                        <h4>@island.Name</h4>
+                        <p>@island.Description</p>
+                    </div>
+                </div>
+            </div>
+        }
+        </div>
+    </section>
+
+
+<section class="facts-section text-center">
+    <h2>Did you know?</h2>
+    <button class="btn btn-primary" @onclick="ShowFact"> Click me! </button>
+    <p>@RandomFact</p>
+</section>
+
+@code
+{
+    private List<Island> featuredIslands = [
+        new ( "New Providence", "Home of Nassau"),
+        new ( "Abaco", "Home of Nassau"),
+        new ( "Eleuthera", "Home of Nassau"),
+    ];
+
+    static public List<String> Facts = [
+        "The Bahamas has around 700 islands and cays.",
+        "The Capital of the bahamas is Nassau",
+        "The Bahamas gained independence in 1973.",
+        "The Bahamas has the third-large barrier reef System"
+    ];
+
+    public String RandomFact = Facts[0];
+
+    public void ShowFact()
+    {
+        var rand = new Random();
+        RandomFact = Facts[rand.Next(Facts.Count - 1)];
+    }
+}

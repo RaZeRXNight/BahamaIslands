@@ -1,0 +1,40 @@
+
+
+.hero {
+    background: url("/images/new_providence.jpg");
+    background-size: cover;
+    background-position: center;
+
+    min-height: 28.125em;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    color: white;
+    
+    h1 {
+        font-size: 40px;
+        font-weight: bolder;
+    }
+    
+    p {
+        font-size: 20px;
+    }
+}
+
+.card:hover {
+    transform: scale(1.10)
+}
+
+button:hover {
+    transform: scale(1.05)
+}
+
+.facts-section {
+    margin-top: 20px;
+    padding: 60px 20px;
+    background-color: aquamarine;
+}
