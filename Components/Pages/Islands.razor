@@ -4,10 +4,10 @@
 <PageTitle>Islands</PageTitle>
 
 <h1>Islands</h1>
-    <section>
-        <h2 class="text-center">Featured Locations</h2>
-        
-        <div class="row">
+<section>
+    <h2 class="text-center">Featured Locations</h2>
+
+    <div class="row">
         @foreach (var island in featuredIslands)
         {
             <div class="col-4">
@@ -20,17 +20,18 @@
                 </div>
             </div>
         }
-        </div>
-    </section>
+    </div>
+</section>
 
 @code
 {
-    private List<Island> featuredIslands = [
-        new ( "Ragged Island", "Home of Nassau"),
-        new ( "Andros", "Home of Nassau"),
-        new ( "Cat Island", "Home of Nassau"),
-        new ( "Acklins", "Home of Nassau"),
-        new ( "Mayaguana", "Home of Nassau"),
-        new ( "Bimini", "Home of Nassau"),
+    private List<Island> featuredIslands =
+    [
+        new("Ragged Island", "Home of Nassau"),
+        new("Andros", "Home of Nassau"),
+        new("Cat Island", "Home of Nassau"),
+        new("Acklins", "Home of Nassau"),
+        new("Mayaguana", "Home of Nassau"),
+        new("Bimini", "Home of Nassau"),
     ];
 }
