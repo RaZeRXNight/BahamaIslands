@@ -3,19 +3,18 @@
 
 <PageTitle>Islands</PageTitle>
 
-<h1>Islands</h1>
+<h1 class="text-center">Islands</h1>
 <section>
-    <h2 class="text-center">Featured Locations</h2>
-
     <div class="row">
         @foreach (var island in featuredIslands)
         {
-            <div class="col-4">
+            <div class="col-3 ">
                 <div class="card h-100">
                     <img src="@island.Image" style="width: auto; height: 16em" class=" card-top" alt="@island.Name">
                     <div class="card-body">
-                        <h4>@island.Name</h4>
+                        <h3>@island.Name</h3>
                         <p>@island.Description</p>
+                        <button>Learn More</button>
                     </div>
                 </div>
             </div>
@@ -27,11 +26,11 @@
 {
     private List<Island> featuredIslands =
     [
-        new("Ragged Island", "Home of Nassau"),
-        new("Andros", "Home of Nassau"),
-        new("Cat Island", "Home of Nassau"),
-        new("Acklins", "Home of Nassau"),
-        new("Mayaguana", "Home of Nassau"),
-        new("Bimini", "Home of Nassau"),
+        new("Ragged Island", "A Remote, quite and hilly island."),
+        new("Andros", "The Largest island in The Bahamas."),
+        new("Cat Island", "A quiet, uncrowded island knwon for its natural beauty, rolling hills, and rich cultural heritage."),
+        new("Acklins", "Quiet, rugged southern island prized for its bonefishing flats and untouched caves."),
+        new("Mayaguana", "Least developed inhabited island, offering it's isolated beaches, pristine reefs and rare wildlife."),
+        new("Bimini", "Known worldwide for deep-sea sportfishing and vibrant marine life."),
     ];
 }
